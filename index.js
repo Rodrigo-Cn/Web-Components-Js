@@ -8,12 +8,12 @@ class CardNews extends HTMLElement {
 
 customElements.define('card-news',CardNews)
 
-class cardOne extends HTMLElement{
+class Card1 extends HTMLElement{
     constructor(){
         super();
-        const shadow2 = this.attachShadow({mode:"open"})
-        shadow2.innerHTML = "<h2>teste2</h2>"
+        const shadow2 = this.attachShadow({mode:"open"});
+        shadow2.innerHTML = "<h2>Rodrigo</h2>";
     }
 }
 
-customElements.define("card-news2",cardOne)
+customElements.define('card1',Card1);
