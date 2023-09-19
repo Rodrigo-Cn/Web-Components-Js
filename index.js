@@ -2,11 +2,29 @@ class CardNews extends HTMLElement{
     constructor(){
         super();
         const shadow = this.attachShadow({mode:"open"});
-        shadow.innerHTML = "xxx";
+        shadow.appendChild(this.build());
+        shadow.appendChild(this.styles());
     }
-    build(){}
+    build(){
+        const div = document.createElement("div");
+        const carddiv = document.createElement("div");
+        const h1 = document.createElement("h1");
+        const image = document.createElement("img");
+
+        h1.textContent = this.getAttribute("conteudo") || "Anônimo";
+
+        div.appendChild(carddiv);
+        div.appendChild(h1);
+        div.appendChild(image);
+
+        div.setAttribute("class","content");
+
+        return div;
+    }
     styles(){}
 }
+
+customElements.define("card-news",CardNews);
 
 class Card1 extends HTMLElement{
     constructor(){
