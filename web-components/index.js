@@ -12,6 +12,7 @@ class CardNews extends HTMLElement{
         const image = document.createElement("img");
 
         h1.textContent = this.getAttribute("conteudo") || "Anônimo";
+        image.src = this.getAttribute("photo") || "";
 
         div.appendChild(carddiv);
         div.appendChild(h1);
@@ -21,7 +22,16 @@ class CardNews extends HTMLElement{
 
         return div;
     }
-    styles(){}
+    styles(){
+        const style = document.createElement("style");
+        style.textContent = `
+        .content{
+            background-color:red;
+        }
+        
+        `
+        return style;
+    }
 }
 
 customElements.define("card-news",CardNews);
