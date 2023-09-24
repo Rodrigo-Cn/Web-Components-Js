@@ -63,3 +63,26 @@ class Batman implements bot1 {
         this.nome = nome;
     }
 }
+
+class casa {
+    rua: string;
+    bairro: string;
+    numero: number;
+    constructor(rua:string,bairro:string,numero:number){
+        this.rua = rua;
+        this.bairro = bairro;
+        this.numero = numero;
+    }
+}
+
+class propietario extends casa{
+    nome:string;
+    constructor(nome:string,rua:string,bairro:string,numero:number){
+        super(rua,bairro,numero);
+        this.nome = nome;
+    }
+}
+
+function itema(...item:any[]):any{
+    return new Array().concat(...item);
+}
